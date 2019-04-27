@@ -26,10 +26,16 @@ url = get("https://www.alexa.com/siteinfo/" + uDOMEN)
 
 soup = BeautifulSoup(url.text, 'html.parser')
 aglobal = soup.find('strong',{'class':'metrics-data align-vmiddle'})
-rglobal = aglobal.text.rstrip().lstrip()
 acountry = soup.find('span',{'data-cat':'countryRank'})
-rcountry = acountry.text.rstrip().lstrip()
+try:
+  rglobal = aglobal.text.rstrip().lstrip()
+  rcountry = acountry.text.rstrip().lstrip()
+except:
+  print('Ada yang salah mungkin domainnya gk ada di alexarank')
 print ('Domain :',uDOMEN)
 print ('Link : https://www.alexa.com/siteinfo/'+uDOMEN)
-print ('Global Rank :'+rglobal)
-print (rcountry)
+try:
+  print ('Global Rank :'+rglobal)
+  print (rcountry)
+except:
+  exit
