@@ -1,2 +1,3 @@
 # rankceker
-Rank ceker python Alexa Rank Coded By Nor Ahmad ^_^ 
+Rank check Alexa Rank
+Run <kbd>python rank.py</kbd>
